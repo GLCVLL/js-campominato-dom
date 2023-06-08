@@ -38,8 +38,8 @@ const generateGrid = () => {
   playButton.innerText = 'Rigioca';
   gridContainer.innerHTML = '';
 
-  const randomNumbers = generateRandomNumbers(16, 1, 100); // Genera 16 numeri casuali distinti tra 1 e 100
-  console.log(randomNumbers); // Stampa i numeri casuali in console per verifica  
+  const bombs = generateRandomNumbers(16, 1, 100); // Genero 16 numeri casuali distinti tra 1 e 100
+  console.log(bombs); // Stampo i numeri casuali in console per verifica  
 
   for (let i = 1; i <= 100; i++) {
     const cell = document.createElement('div');
