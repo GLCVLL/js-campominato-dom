@@ -1,0 +1,47 @@
+.navbar{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main{
+    background-color: #7fffd4;
+}
+
+.container{
+    height: calc(100vh - 140px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#my-grid{
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#my-grid .cell{
+    height: 50px;
+    width: 50px;
+    flex-basis: calc(100% / 10);
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cell.active{
+    background-color: blue;
+}
+
+footer{
+    height: 70px;
+}
+
+.footer-text{
+    height: 100%;
+    line-height: 70px;
+}
