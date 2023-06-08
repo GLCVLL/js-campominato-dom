@@ -48,17 +48,16 @@ const generateGrid = () => {
 
   // Event listener per il click sulla cella
   cell.addEventListener('click', () => {
-    // Controllo se la cella è già attiva
-    if (!cell.classList.contains('active')) {
-      // Incremento il punteggio e aggiorna l'interfaccia utente
-      score++;
-      updateScore();
-
-      // Attivo/disattivo la classe 'active' sulla cella
+    if (bombs.includes(i)) {
+      // La cella è una bomba
+      cell.style.backgroundColor = 'red';
+      console.log('Hai calpestato una bomba. Partita terminata.');
+    } else {
+      // La cella non è una bomba
       cell.classList.toggle('active');
       console.log(`Clicked cell ${i}`);
-
-      // Disabilito ulteriori click sulla cella
+      score++;
+      updateScore();
       cell.style.pointerEvents = 'none';
     }
   });
