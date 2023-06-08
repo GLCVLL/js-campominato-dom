@@ -33,6 +33,7 @@ const updateScore = () => {
 // Aggiungo una variabile per tenere traccia del punteggio dell'utente
 let score = 0;
 
+
 // !Funzione per generare la griglia di gioco
 const generateGrid = () => {
   playButton.innerText = 'Rigioca';
@@ -40,6 +41,8 @@ const generateGrid = () => {
 
   const bombs = generateRandomNumbers(16, 1, 100); // Genero 16 numeri casuali distinti tra 1 e 100
   console.log(bombs); // Stampo i numeri casuali in console per verifica  
+
+  const maxScore = 100 - bombs.length;
 
   for (let i = 1; i <= 100; i++) {
     const cell = document.createElement('div');
@@ -51,7 +54,7 @@ const generateGrid = () => {
     if (bombs.includes(i)) {
       // La cella è una bomba
       cell.style.backgroundColor = 'red';
-      console.log('Hai calpestato una bomba. Partita terminata.');
+      alert('Hai calpestato una bomba. Partita terminata.');
     } else {
       // La cella non è una bomba
       cell.classList.toggle('active');
@@ -59,6 +62,8 @@ const generateGrid = () => {
       score++;
       updateScore();
       cell.style.pointerEvents = 'none';
+    } if(score === maxScore){
+      alert('Congratulazioni! Hai vinto la partita.')
     }
   });
 
